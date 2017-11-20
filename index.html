@@ -11,11 +11,19 @@
 <script src="https://soulwire.github.io/sketch.js/js/sketch.min.js"></script>
 <script src="app.js"></script>
 <script type="text/babel">
-  const OurFirstComponent = () => {
+  function OurFirstComponent() {
     return (
-      <h1>Hello, I am a React Component!</h1>
+      <h1>I am the child!</h1>
+    );
+  }
+  function Container() {
+    return (
+      <div>
+        <h1>I am the parent!</h1>
+        <OurFirstComponent />
+      </div>
     );
   }
   const placeWeWantToPutComponent = document.querySelector('#hook');
-  ReactDOM.render(<OurFirstComponent />, placeWeWantToPutComponent);
+  ReactDOM.render(<Container />, placeWeWantToPutComponent);
 </script>
