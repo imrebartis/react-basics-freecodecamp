@@ -18,10 +18,12 @@
   }
   class Container extends React.Component {
     render() {
-      const greeting = 'I am a string!';
+      const addNumbers = (num1, num2) => {
+        return num1 + num2;
+      };
       return (
         <div>
-          <h1>{ greeting }</h1>
+          <h1>The sum is: { addNumbers(1, 2) }</h1>
           <OurFirstComponent />
         </div>
       );
