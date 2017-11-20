@@ -21,10 +21,11 @@
       super(props);
       this.state = { isMusicPlaying: false };
     }
-    
     render() {
+      const status = this.state.isMusicPlaying ? 'Playing' : 'Not playing';
       return (
         <div>
+          <h1>{ status }</h1>
           <PlayButton />
         </div>
       );
