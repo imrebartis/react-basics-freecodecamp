@@ -20,19 +20,21 @@
       super(props);
       this.state = { isMusicPlaying: false };
     }
-    handleClick(event) {
-      if (this.state.isMusicPlaying) {
-      this.setState({ isMusicPlaying: false });
-      } else {
-        this.setState({ isMusicPlaying: true });
-      }
+    handleClick() {
+      this.setState(prevState => {
+        return { 
+          isMusicPlaying: !prevState.isMusicPlaying   
+        };
+      });
     };
     render() {
       return (
         <div>
           <PlayButton
             onClick={this.handleClick.bind(this)} 
-            isMusicPlaying={this.state.isMusicPlaying} />
+            isMusicPlaying={this.state.isMusicPlaying}
+          />
+          <audio id="audio" ref={(audioTag) => { this.audio = audioTag }} />
         </div>
       );
     }
